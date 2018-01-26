@@ -2,7 +2,7 @@
 class TabItem {
   constructor(element) {
     this.element = element;
-    console.log(element);
+
   }
     // attach dom element to object. Example in Tabs class
 
@@ -26,6 +26,7 @@ class TabLink {
     // assign this to the associated tab using the parent's "getTab" method by passing it the correct data
     // reassign this.tabItem to be a new instance of TabItem, passing it this.tabItem
     this.element.addEventListener('click', () => {  
+      // e.stopPropagation();
       this.tabs.updateActive(this);   
       this.select();
     });
@@ -83,3 +84,4 @@ class Tabs {
 // let tabs = document.querySelectorAll('.Tabs');
 // tabs = Array.from(tabs).map(tabs => new Tabs(tabs));
 let tab = new Tabs(document.querySelector('.Tabs'));
+console.log("Tab array",tab);
